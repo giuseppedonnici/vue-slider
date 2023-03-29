@@ -12,6 +12,7 @@ createApp ({
     data() {
         return {
             activeImage: 0,
+            intervall: null,
             slides: [
                 {
                     image: 'img/01.webp',
@@ -37,6 +38,11 @@ createApp ({
             ],
         }
     },
+
+    mounted() {
+        this.startAutoscroll();
+    },
+
     methods: {
         showNext() {
             if(this.activeImage < this.slides.length - 1) {
@@ -52,6 +58,38 @@ createApp ({
             } else {
                 this.activeImage = this.slides.length - 1;
             }
+        },
+
+        selectedImage0() {
+            this.activeImage = 0;
+        },
+
+        selectedImage1() {
+            this.activeImage = 1;
+        },
+
+        selectedImage2() {
+            this.activeImage = 2;
+        },
+
+        selectedImage3() {
+            this.activeImage = 3;
+        },
+
+        selectedImage4() {
+            this.activeImage = 4;
+        },
+
+        startAutoscroll() {
+            this.intervall = setInterval(this.showNext, 3000);
+        },
+
+        mouseOver() {
+            clearInterval(this.intervall);
+        },
+
+        mouseLeave() {
+            this.intervall = setInterval(this.showNext, 3000);
         }
     }
 }).mount('#app')

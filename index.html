@@ -16,7 +16,7 @@
         <div class="container">
             <div class="slider-wrapper" tabindex="0">
 
-                <div class="item">
+                <div class="item" @mouseover="mouseOver()" @mouseleave="mouseLeave()">
                     <img :src="slides[activeImage].image" alt="Spiderman" />
                     <div class="text">
                         <h3>{{slides[activeImage].title}}</h3>
@@ -27,21 +27,21 @@
                 </div>
 
                 <div class="thumbs">
-                    <div class="prev" @click="showPrev"></div>
+                    <div class="prev" @click="showPrev()"></div>
                     <div class="next" @click="showNext()"></div>
-                    <div class="thumb" :class="activeImage === 0 ? 'active' : ''">
+                    <div class="thumb" :class="activeImage === 0 ? 'active' : ''" @click="selectedImage0()">
                         <img :src="slides[0].image" alt="Svezia" />
                     </div>
-                    <div class="thumb" :class="activeImage === 1 ? 'active' : ''">
+                    <div class="thumb" :class="activeImage === 1 ? 'active' : ''" @click="selectedImage1()">
                         <img :src="slides[1].image" alt="Ratchet & Clank" />
                     </div>
-                    <div class="thumb" :class="activeImage === 2 ? 'active' : ''">
+                    <div class="thumb" :class="activeImage === 2 ? 'active' : ''" @click="selectedImage2()">
                         <img :src="slides[2].image" alt="Fortnite" />
                     </div>
-                    <div class="thumb" :class="activeImage === 3 ? 'active' : ''">
+                    <div class="thumb" :class="activeImage === 3 ? 'active' : ''" @click="selectedImage3()">
                         <img :src="slides[3].image" alt="Stray" />
                     </div>
-                    <div class="thumb" :class="activeImage === 4 ? 'active' : ''">
+                    <div class="thumb" :class="activeImage === 4 ? 'active' : ''" @click="selectedImage4()">
                         <img :src="slides[4].image" alt="Avengers" />
                     </div>
                 </div>
