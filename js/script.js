@@ -60,24 +60,8 @@ createApp ({
             }
         },
 
-        selectedImage0() {
-            this.activeImage = 0;
-        },
-
-        selectedImage1() {
-            this.activeImage = 1;
-        },
-
-        selectedImage2() {
-            this.activeImage = 2;
-        },
-
-        selectedImage3() {
-            this.activeImage = 3;
-        },
-
-        selectedImage4() {
-            this.activeImage = 4;
+        showSlide(indexToShow) {
+            this.activeImage = indexToShow;
         },
 
         startAutoscroll() {
